@@ -9,7 +9,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.StatusLine;
 
-import com.hdroid.http.resolve.IParser;
+import com.hdroid.http.resolve.IJsonParser;
+
 
 
 /**
@@ -24,7 +25,7 @@ public final class ResponseInfo {
     private final HttpResponse response;
     public Object result;
     public Object parserData = null;
-    private IParser  parser;
+    private IJsonParser  parser;
     public final boolean resultFormCache;
 
     public final Locale locale;
@@ -105,10 +106,4 @@ public final class ResponseInfo {
         }
     }
     
-    
-    public void parser(Class<? extends Object> clazz) throws Exception{
-    	Object obj = clazz.newInstance();
-		Method m = clazz.getDeclaredMethod("execute", String.class);
-		parserData = m.invoke(obj, result);
-    }
 }

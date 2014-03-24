@@ -12,10 +12,9 @@ import org.apache.http.client.HttpResponseException;
 import org.apache.http.entity.BufferedHttpEntity;
 
 import android.annotation.SuppressLint;
-import com.hdroid.http.response.result.ResponseInfo;
+
+import com.hdroid.http.exception.ParserDataFailException;
 import com.hdroid.http.util.OtherUtils;
-
-
 
 /** 
  * @description: 
@@ -24,12 +23,16 @@ import com.hdroid.http.util.OtherUtils;
 
 public class HttpResponseHandler extends BaseHttpResponseHandler {
 	
-	public HttpResponseHandler( ){
+	
+	public HttpResponseHandler(){
 		super();
+	}
+	public HttpResponseHandler(Class<? extends Object> clazz){
+		super();
+		this.clazz = clazz;
 	}
 	
 
-	
 	@SuppressLint("UseValueOf")
 	public void sendResponseMessage(HttpResponse response){
 		//TODO 构建消息并发送
@@ -57,19 +60,27 @@ public class HttpResponseHandler extends BaseHttpResponseHandler {
 	                sendProgressMessage(PROGRESS_MESSAGE, new Object[]{new Long(total), new Long(current), new Boolean(isUploading)});
 	            }
 	            sendProgressMessage(PROGRESS_MESSAGE, new Object[]{new Long(total), new Long(total), new Boolean(isUploading)});
+			
 			}
-		} catch (IOException e)
-		{
+			
+			if (status.getStatusCode() >= 300)
+			{
+				sendFailureMessage(new HttpResponseException(status.getStatusCode(), status.getReasonPhrase()), new StringBuilder("网络请求错误"));
+			} else {
+				if(clazz != null && responseBody != null){//在后台做解析操作
+					sendSuccessMessage(response, this.parser(responseBody.toString(), clazz));
+				}else{
+					sendSuccessMessage(response, responseBody);
+				}
+			}
+			
+		} catch (IOException e){
 			sendFailureMessage(e,  null);
+		} catch(ParserDataFailException e){
+			sendFailureMessage(e, new StringBuilder(e.getMessage()));
 		}
 
-		if (status.getStatusCode() >= 300)
-		{
-			sendFailureMessage(new HttpResponseException(status.getStatusCode(), status.getReasonPhrase()), new StringBuilder(" net error"));
-		} else {
-			sendSuccessMessage(response, responseBody);
-			
-		}
+		
 	}
 	
 	

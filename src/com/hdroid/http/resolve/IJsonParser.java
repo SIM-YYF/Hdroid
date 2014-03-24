@@ -6,6 +6,6 @@ package com.hdroid.http.resolve;
  * @date 2014-3-11 下午2:58:49
 
  */
-public interface IParser {
-	Object execute();
+public interface IJsonParser {
+	Object parser();
 }

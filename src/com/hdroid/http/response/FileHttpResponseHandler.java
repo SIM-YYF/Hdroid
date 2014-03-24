@@ -43,6 +43,7 @@ public class FileHttpResponseHandler extends HttpResponseHandler {
 	public FileHttpResponseHandler(String url, String rootFile, String fileName)
 	{
 		super();
+		
 		this.url = url;
 		this.baseDirFile = new File(rootFile); //文件目录
 		this.file = new File(rootFile, fileName);//文件
@@ -52,6 +53,7 @@ public class FileHttpResponseHandler extends HttpResponseHandler {
 	public FileHttpResponseHandler(String rootFile, String fileName)
 	{
 		super();
+		
 		this.baseDirFile = new File(rootFile);
 		this.file = new File(rootFile, fileName);
 		this.tempFile = new File(rootFile, fileName + TEMP_SUFFIX);
@@ -60,6 +62,7 @@ public class FileHttpResponseHandler extends HttpResponseHandler {
 	public FileHttpResponseHandler(String filePath)
 	{
 		super();
+		
 		this.file = new File(filePath);
 		this.baseDirFile = new File(this.file.getParent());
 		this.tempFile = new File(filePath + TEMP_SUFFIX);

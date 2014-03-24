@@ -1,9 +1,14 @@
 package com.hdroid.http.response;
 
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import org.apache.http.HttpResponse;
+import org.apache.http.impl.cookie.DateParseException;
 
 import com.hdroid.http.callback.RequestCallBackHandler;
+import com.hdroid.http.exception.ParserDataFailException;
 import com.hdroid.http.response.result.ResponseInfo;
 
 
@@ -28,6 +33,8 @@ public abstract class BaseHttpResponseHandler implements RequestCallBackHandler{
 	protected boolean isUploading = true;
 	
 	protected String responseCharset = null;
+	
+	protected Class<? extends Object> clazz = null;
 	
 	public void setResponseCharset(String responseCharset){
 		this.responseCharset = responseCharset;
@@ -149,7 +156,7 @@ public abstract class BaseHttpResponseHandler implements RequestCallBackHandler{
 	 * @param response
 	 * @param responseBody
 	 */
-	public void sendSuccessMessage(HttpResponse response, StringBuilder responseBody){
+	public void sendSuccessMessage(HttpResponse response, Object responseBody){
 		ResponseInfo responseInfo = new ResponseInfo(response, responseBody, false);
 		sendMessage(obtainMessage(SUCCESS_MESSAGE, new Object[]{responseInfo}));
 	}
@@ -162,4 +169,21 @@ public abstract class BaseHttpResponseHandler implements RequestCallBackHandler{
 		sendMessage(obtainMessage(FAILURE_MESSAGE, new Object[]{e, responseBody}));
 	}
 	
+	/**
+	 * 解析数据
+	 * @param json
+	 * @param clazz
+	 * @return
+	 * @throws ParserDataFailException
+	 */
+    public Object parser(String json, Class<? extends Object> clazz) throws ParserDataFailException{
+    	Object obj = null;
+    	try {
+			obj = clazz.newInstance();
+			Method m = clazz.getDeclaredMethod("parser", String.class);
+			return m.invoke(obj, json);
+		} catch (Exception e) {
+			throw new ParserDataFailException("数据解析失败");
+		}
+    }
 }

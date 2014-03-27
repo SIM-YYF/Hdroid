@@ -17,7 +17,6 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.protocol.HttpContext;
 
-import com.hdroid.http.AsynHttpClient;
 import com.hdroid.http.cache.HttpCache;
 import com.hdroid.http.callback.HttpRedirectHandler;
 import com.hdroid.http.response.FileHttpResponseHandler;

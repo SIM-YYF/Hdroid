@@ -24,6 +24,7 @@ import java.lang.reflect.Field;
 import java.util.concurrent.Executor;
 
 import com.hdroid.log.Log;
+import com.hdroid.multithread.base.AsyncTask;
 
 /**
  * 1.inherit a class from
@@ -125,15 +126,14 @@ import com.hdroid.log.Log;
  * </pre>
  *
  */
-public abstract class AsyncTask<Params, Progress, Result> extends
-        android.os.AsyncTask<Params, Progress, Result> {
+public abstract class AbsAsyncTask<Params, Progress, Result> extends AsyncTask<Params, Progress, Result> {
     protected TaskListener<Progress, Result> listener = null;
 
-    public AsyncTask() {
+    public AbsAsyncTask() {
         super();
     }
 
-    public AsyncTask(TaskListener<Progress, Result> listener) {
+    public AbsAsyncTask(TaskListener<Progress, Result> listener) {
         super();
         this.listener = listener;
     }

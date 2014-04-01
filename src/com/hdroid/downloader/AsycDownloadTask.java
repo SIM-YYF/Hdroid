@@ -33,9 +33,9 @@ import java.sql.SQLException;
 import com.hdroid.downloader.dao.ISql;
 import com.hdroid.downloader.dao.ISqlImpl;
 import com.hdroid.log.Log;
-import com.hdroid.multithread.AsyncTask;
+import com.hdroid.multithread.AbsAsyncTask;
 
-public class AsycDownloadTask extends AsyncTask<DownloadTask, Integer, DownloadTask> {
+public class AsycDownloadTask extends AbsAsyncTask<DownloadTask, Integer, DownloadTask> {
 
     private static final int MESSAGE_POST_ERROR = 0x1;
 
@@ -400,10 +400,10 @@ public class AsycDownloadTask extends AsyncTask<DownloadTask, Integer, DownloadT
         final Integer mData;
         final DownloadTask mDownloadTask;
         @SuppressWarnings("rawtypes")
-        final AsyncTask mTask;
+        final AbsAsyncTask mTask;
 
         AsyncTaskResult(@SuppressWarnings("rawtypes")
-                        AsyncTask task, DownloadTask downloadtask, Integer data) {
+                        AbsAsyncTask task, DownloadTask downloadtask, Integer data) {
             mTask = task;
             mData = data;
             mDownloadTask = downloadtask;

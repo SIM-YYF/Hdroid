@@ -1,21 +1,26 @@
 package com.hdroid.mvc.command;
 
+import com.hdroid.mvc.common.TIResponseListener;
+import com.hdroid.mvc.common.TRequest;
+import com.hdroid.mvc.common.TResponse;
+
 public interface ITask {
-//	TARequest getRequest();
-//
-//	void setRequest(TARequest request);
-//
-//	TAResponse getResponse();
-//
-//	void setResponse(TAResponse response);
+	TRequest getRequest();
+
+	void setRequest(TRequest request);
+
+	TResponse getResponse();
+
+	void setResponse(TResponse response);
+
+	TIResponseListener getResponseListener();
+
+	void setResponseListener(TIResponseListener listener);
+
+	void setTerminated(boolean terminated);
+
+	boolean isTerminated();
 
 	void execute();
 
-//	TAIResponseListener getResponseListener();
-//
-//	void setResponseListener(TAIResponseListener listener);
-
-	void setTerminated(boolean terminated);
-	boolean isTerminated();
-	
 }

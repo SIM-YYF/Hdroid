@@ -19,33 +19,29 @@ public class ThreadPool {
 		}
 		return instance;
 	}
-	
+
 	/**
 	 * 开启任务
 	 */
-	public void start(){
-		if(!started){
+	public void start() {
+		if (!started) {
 			int threadCount = MAX_THREADS_COUNT;
 			threads = new TaskThread[threadCount];
-			for (int threadId = 0; threadId < threadCount; threadId++)
-			{
+			for (int threadId = 0; threadId < threadCount; threadId++) {
 				threads[threadId] = new TaskThread(threadId);
 				threads[threadId].start();
 			}
 			started = true;
 		}
 	}
-	
+
 	/**
 	 * 取消所有任务
 	 */
-	
-	public void shutdown()
-	{
-		if (started)
-		{
-			for (TaskThread thread : threads)
-			{
+
+	public void shutdown() {
+		if (started) {
+			for (TaskThread thread : threads) {
 				thread.stop();
 			}
 			threads = null;

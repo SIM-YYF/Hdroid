@@ -221,7 +221,7 @@ public class UpdateManager {
                 try {
                     PackageInfo pinfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
                     Integer versionCode = pinfo.versionCode; // 1
-                    String versionName = pinfo.versionName; // 1.0
+//                    String versionName = pinfo.versionName; // 1.0
                     String packageName = context.getPackageName();
 
                     if (options.shouldCheckPackageName() && !packageName.equals(updateInfo.getPackageName())) {

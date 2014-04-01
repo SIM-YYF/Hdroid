@@ -124,9 +124,6 @@ import com.hdroid.log.Log;
  * new DownloadFilesTask(listener).execute(url,url,url);
  * </pre>
  *
- * @author snowdream <yanghui1986527@gmail.com>
- * @version v1.0
- * @date 2013年9月8日
  */
 public abstract class AsyncTask<Params, Progress, Result> extends
         android.os.AsyncTask<Params, Progress, Result> {
@@ -210,65 +207,5 @@ public abstract class AsyncTask<Params, Progress, Result> extends
         }
     }
 
-    /**
-     * set the default Executor
-     *
-     * @param executor
-     */
-    public static void setDefaultExecutor(Executor executor) {
-        Class<?> c = null;
-        Field field = null;
-        try {
-            c = Class.forName("android.os.AsyncTask");
-            field = c.getDeclaredField("sDefaultExecutor");
-            field.setAccessible(true);
-            field.set(null, executor);
-            field.setAccessible(false);
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-            Log.e("IllegalArgumentException", e);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            Log.e("ClassNotFoundException", e);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-            Log.e("NoSuchFieldException", e);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-            Log.e("IllegalAccessException", e);
-        }
-    }
-
-    /**
-     * get the default Executor
-     *
-     * @return the default Executor
-     */
-    public static Executor getDefaultExecutor() {
-        Executor exec = null;
-
-        Class<?> c = null;
-        Field field = null;
-        try {
-            c = Class.forName("android.os.AsyncTask");
-            field = c.getDeclaredField("sDefaultExecutor");
-            field.setAccessible(true);
-            exec = (Executor) field.get(null);
-            field.setAccessible(false);
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-            Log.e("IllegalArgumentException", e);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            Log.e("ClassNotFoundException", e);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-            Log.e("NoSuchFieldException", e);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-            Log.e("IllegalAccessException", e);
-        }
-
-        return exec;
-    }
+    
 }

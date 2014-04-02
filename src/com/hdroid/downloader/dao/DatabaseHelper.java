@@ -3,7 +3,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.hdroid.downloader.DownloadTask;
-import com.hdroid.log.Log;
+import com.hdroid.log.snow.Log;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;

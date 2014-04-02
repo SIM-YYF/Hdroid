@@ -25,7 +25,7 @@ import java.sql.SQLException;
 
 import com.hdroid.downloader.dao.ISql;
 import com.hdroid.downloader.dao.ISqlImpl;
-import com.hdroid.log.Log;
+import com.hdroid.log.snow.Log;
 
 /**
  * @author snowdream <yanghui1986527@gmail.com>

@@ -30,10 +30,10 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.sql.SQLException;
 
+import com.hdroid.asynctask.cat.AbsAsyncTask;
 import com.hdroid.downloader.dao.ISql;
 import com.hdroid.downloader.dao.ISqlImpl;
-import com.hdroid.log.Log;
-import com.hdroid.multithread.AbsAsyncTask;
+import com.hdroid.log.snow.Log;
 
 public class AsycDownloadTask extends AbsAsyncTask<DownloadTask, Integer, DownloadTask> {
 

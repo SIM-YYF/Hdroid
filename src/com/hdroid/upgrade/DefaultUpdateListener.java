@@ -16,7 +16,7 @@ import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
 import com.hdroid.downloader.DownloadTask;
-import com.hdroid.log.Log;
+import com.hdroid.log.snow.Log;
 
 /**
  * Created by snowdream on 1/2/14.

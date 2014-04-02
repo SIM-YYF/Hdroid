@@ -3,7 +3,7 @@ package com.hdroid.upgrade;
 import android.text.TextUtils;
 
 import com.google.gson.stream.JsonReader;
-import com.hdroid.log.Log;
+import com.hdroid.log.snow.Log;
 
 import java.io.IOException;
 import java.io.StringReader;

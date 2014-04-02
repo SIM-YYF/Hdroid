@@ -16,7 +16,7 @@
 
 package com.hdroid.downloader;
 
-import com.hdroid.multithread.TaskListener;
+import com.hdroid.asynctask.cat.TaskListener;
 
 
 /**

@@ -10,8 +10,8 @@ import android.os.Handler;
 import java.util.Locale;
 import java.util.Map;
 
+import com.hdroid.asynctask.cat.TaskListener;
 import com.hdroid.downloader.DownloadTask;
-import com.hdroid.multithread.TaskListener;
 
 /**
  * Created by snowdream on 12/30/13.

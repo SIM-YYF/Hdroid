@@ -12,11 +12,11 @@ import android.text.TextUtils;
 import android.webkit.URLUtil;
 
 import com.google.gson.JsonSyntaxException;
+import com.hdroid.asynctask.cat.AbsAsyncTask;
 import com.hdroid.downloader.DownloadListener;
 import com.hdroid.downloader.DownloadManager;
 import com.hdroid.downloader.DownloadTask;
-import com.hdroid.log.Log;
-import com.hdroid.multithread.AbsAsyncTask;
+import com.hdroid.log.snow.Log;
 import com.hdroid.upgrade.util.HttpRequest;
 
 

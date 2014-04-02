@@ -7,7 +7,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import com.hdroid.log.Log;
+import com.hdroid.log.snow.Log;
 
 import java.io.IOException;
 import java.io.StringReader;

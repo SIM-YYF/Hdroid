@@ -31,12 +31,7 @@ import android.graphics.Shader.TileMode;
 import android.graphics.drawable.BitmapDrawable;
 
 /**
- * @Title ImageUtils
- * @Package com.ta.util.extend.draw
  * @Description 处理图片的工具类.
- * @author 白猫
- * @date 2013-1-22 下午 9:35
- * @version V1.0
  */
 public class ImageUtils
 {

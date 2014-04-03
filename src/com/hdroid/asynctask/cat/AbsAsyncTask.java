@@ -8,6 +8,7 @@ import android.os.Build;
 import java.lang.reflect.Field;
 import java.util.concurrent.Executor;
 
+import com.hdroid.asynctask.cat.base.AsyncTask;
 import com.hdroid.log.snow.Log;
 
 /**

@@ -1,4 +1,4 @@
-package com.hdroid.asynctask.cat;
+package com.hdroid.asynctask.cat.base;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;

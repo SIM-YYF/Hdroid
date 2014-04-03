@@ -1,6 +1,6 @@
 
 
-package com.hdroid.asynctask.cat;
+package com.hdroid.asynctask.cat.base;
 
 import android.annotation.TargetApi;
 import android.os.Handler;

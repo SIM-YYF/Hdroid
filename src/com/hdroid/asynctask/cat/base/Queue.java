@@ -33,7 +33,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package com.hdroid.asynctask.cat;
+package com.hdroid.asynctask.cat.base;
 
 import java.util.Collection;
 

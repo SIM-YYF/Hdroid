@@ -11,7 +11,7 @@
 	<url>https://github.com/yuanwenfei/Hdroid.git</url>
 	<inceptionYear>2014</inceptionYear>
 
-	<parent>
+ 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
@@ -32,35 +32,12 @@
 	    <tag>v0.0.1</tag>
   </scm>
 
-	<developers>
-		<developer>
-			<id>nostra13</id>
-			<name>Sergey Tarasevich</name>
-			<timezone>3</timezone>
-			<roles>
-				<role>developer</role>
-			</roles>
-		</developer>
-	</developers>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/yuanwenfei/Hdroid/issues</url>
 	</issueManagement>
 
-	<modules>
-		<module>library</module>
-		<module>sample</module>
-	</modules>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.6</java.version>
-		<android.version>4.1.1.4</android.version>
-		<android.platform>16</android.platform>
-		<android-support.version>r7</android-support.version>
-	</properties>
 
 	<dependencyManagement>
 		<dependencies>

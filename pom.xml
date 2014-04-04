@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hdroid</groupId>
-	<artifactId>parent</artifactId>
+	<artifactId>hdroid</artifactId>
 	<packaging>pom</packaging>
 	<name>Android rapid development tool Project</name>
 	<version>0.0.1-SNAPSHOT</version>

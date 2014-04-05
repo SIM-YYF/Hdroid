@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.yuanwenfei</groupId>
 	<artifactId>hdroid</artifactId>
 	<packaging>pom</packaging>
 	<name>Android rapid development tool Project</name>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.4</version>
 	<description>Android rapid development tool Project</description>
 	<url>https://github.com/yuanwenfei/Hdroid.git</url>
 	<inceptionYear>2014</inceptionYear>
@@ -59,7 +58,7 @@
 		<connection>scm:git:git://github.com/yuanwenfei/Hdroid.git</connection>
 		<developerConnection>scm:git:git@github.com:yuanwenfei/Hdroid.git</developerConnection>
 		<url>https://github.com/yuanwenfei/Hdroid.git</url>
-		<tag>v0.0.3</tag>
+		<tag>v0.0.4</tag>
 	</scm>
 
 

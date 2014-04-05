@@ -7,7 +7,7 @@
 	<artifactId>hdroid</artifactId>
 	<packaging>pom</packaging>
 	<name>Android rapid development tool Project</name>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<description>Android rapid development tool Project</description>
 	<url>https://github.com/yuanwenfei/Hdroid.git</url>
 	<inceptionYear>2014</inceptionYear>

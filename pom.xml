@@ -22,6 +22,7 @@
 		<connection>scm:git:git:@github.com：yuanwenfei/Hdroid.git</connection>
 		<developerConnection>scm:git:git@github.com:yuanwenfei/Hdroid.git</developerConnection>
 		<url>https://github.com/yuanwenfei/Hdroid.git</url>
+		<tag>af6b738b2ca070e654d52dbecb9c8d02910efb17</tag>
   </scm>
 	
 	

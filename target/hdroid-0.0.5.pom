@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.github.yuanwenfei</groupId>
+	<artifactId>hdroid</artifactId>
+	<packaging>jar</packaging>
+	<name>Android rapid development tool Project</name>
+	<version>0.0.5</version>
+	<description>Android rapid development tool Project</description>
+	<url>https://github.com/yuanwenfei/Hdroid.git</url>
+	<inceptionYear>2014</inceptionYear>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+	
+	<scm>
+		<connection>scm:git:git:@github.com：yuanwenfei/Hdroid.git</connection>
+		<developerConnection>scm:git:git@github.com:yuanwenfei/Hdroid.git</developerConnection>
+		<url>https://github.com/yuanwenfei/Hdroid.git</url>
+		<tag>hdroid-0.0.5</tag>
+  </scm>
+	
+	
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.1</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<licenses>
+		<license>
+			<name>Apache License Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+
+
+
+<!-- 	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/yuanwenfei/Hdroid/issues</url>
+	</issueManagement> -->
+    <distributionManagement>  
+        <repository>  
+            <id>github-releases</id>  
+            <name>github Release Repository</name>  
+            <url>https://github.com/yuanwenfei/Hdroid.git</url>  
+        </repository>
+        <snapshotRepository>
+          <id>snapshots</id>
+          <name>Nexus Snapshot Repository</name>  
+          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>  
+        </snapshotRepository> 
+        
+    </distributionManagement>  
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>android</artifactId>
+				<version>${android.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>support-v4</artifactId>
+				<version>${android-support.version}</version>
+			</dependency>
+<!--  			<dependency>
+				<groupId>commons-httpclient</groupId>
+				<artifactId>commons-httpclient</artifactId>
+				<version>${commons-httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>httpcomponents-httpcore</groupId>
+				<artifactId>httpcore</artifactId>
+				<version>${httpcore.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient-android</artifactId>
+				<version>${httpclient-android.version}</version>
+			</dependency> -->
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>${gson.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<tagBase>https://github.com/yuanwenfei/Hdroid.git/tags/</tagBase> 
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+					<artifactId>android-maven-plugin</artifactId>
+					<version>3.8.0</version>
+					<configuration>
+						<sdk>
+							<platform>${android.platform}</platform>
+						</sdk>
+						<undeployBeforeDeploy>true</undeployBeforeDeploy>
+					</configuration>
+					<extensions>true</extensions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<excludes>
+							<exclude>com.google.android:android</exclude>
+						</excludes>
+						<buildOutputDirectory>bin</buildOutputDirectory>
+						<classpathContainers>
+							<classpathContainer>com.android.ide.eclipse.adt.ANDROID_FRAMEWORK</classpathContainer>
+						</classpathContainers>
+						<additionalProjectnatures>
+							<projectnature>com.android.ide.eclipse.adt.AndroidNature</projectnature>
+						</additionalProjectnatures>
+						<additionalBuildcommands>
+							<buildcommand>com.android.ide.eclipse.adt.ResourceManagerBuilder</buildcommand>
+							<buildcommand>com.android.ide.eclipse.adt.PreCompilerBuilder</buildcommand>
+							<buildcommand>com.android.ide.eclipse.adt.ApkBuilder</buildcommand>
+						</additionalBuildcommands>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.2.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.9</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<sourceDirectory>src</sourceDirectory>
+	</build>
+
+</project>

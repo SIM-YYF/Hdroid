@@ -133,7 +133,9 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.4</version>
 					<configuration>
-						<tagBase>https://github.com/yuanwenfei/Hdroid.git/tags/</tagBase> 
+						<tagBase>${git.address}/tags/</tagBase> 
+						<goals>-f account-captcha/pom.xml deploy</goals> 
+						<tagNameFormat>v@{project.version}</tagNameFormat>
 					</configuration>
 				</plugin>
 				<plugin>

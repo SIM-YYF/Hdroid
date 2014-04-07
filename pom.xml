@@ -7,7 +7,7 @@
 	<artifactId>hdroid</artifactId>
 	<packaging>jar</packaging>
 	<name>Android rapid development tool Project</name>
-	<version>0.0.5</version>
+	<version>0.0.5-Snapshot</version>
 	<description>Android rapid development tool Project</description>
 	<url>https://github.com/yuanwenfei/Hdroid.git</url>
 	<inceptionYear>2014</inceptionYear>
@@ -22,7 +22,6 @@
 		<connection>scm:git:git:@github.com：yuanwenfei/Hdroid.git</connection>
 		<developerConnection>scm:git:git@github.com:yuanwenfei/Hdroid.git</developerConnection>
 		<url>https://github.com/yuanwenfei/Hdroid.git</url>
-		<tag>hdroid-0.0.5</tag>
   </scm>
 	
 	
@@ -134,7 +133,8 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.4</version>
 					<configuration>
-						<tagBase>https://github.com/yuanwenfei/Hdroid.git/tags/</tagBase> 
+						<releaseProfiles>release</releaseProfiles>
+      					<goals>deploy assembly:single</goals>
 					</configuration>
 				</plugin>
 				<plugin>
